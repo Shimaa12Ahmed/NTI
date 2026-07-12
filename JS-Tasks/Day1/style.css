@@ -1,0 +1,44 @@
+ *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            text-align: center;
+            margin-top: 20px;
+            color:#3fa47c;
+        }
+        .container{
+           margin-top: 50px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            width: 300px;
+            height: 40px;
+            margin: 10px;
+            padding: 5px;
+            font-size: 16px;
+        }
+        button{
+            width: 150px;
+            height: 40px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            color:blanchedalmond;
+            background-color: #3fa47c;
+        }
+        #result{
+            margin-top: 20px;
+          
+        }
+        h4{
+            color:#51d48a;
+        }
+        span{
+            color:#3fa47c;
+        }
