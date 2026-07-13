@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluate System</title>
+<link rel="stylesheet" href="style.css">
+    <script src="evaluate.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <input type="text" id="fname" placeholder="Enter your first name">
+    <input type="text" id="lname" placeholder="Enter your last name">
+    <input type="number" id="age" placeholder="Enter your age " min="18">
+    <input type="number" id="salary" placeholder="Enter your salary" min="0">
+    <input type="number" id="experience" placeholder="Enter your experience in years" min="0">
+    <input type="number" id="rate" placeholder="Enter your rate " disabled min="1" max="10">
+
+    <button onclick="evaluateEmployees()">Evaluate</button>
+</div>
+
+   <table id="resultTable" border="1">
+        <thead>
+            <tr>
+              <th>job Category</th>
+              <th>Level</th>
+              <th>Salary</th>
+              <th>Shift</th>
+            </tr>
+        </thead>
+        <tbody id="resultBody">
+            <td id="jobCategory"></td>
+            <td id="level"></td>
+            <td id="salaryResult"></td>
+            <td id="shift"></td>
+        </tbody>
+    </table>    
+
+</body>
+</html>
