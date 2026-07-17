@@ -1,0 +1,76 @@
+ *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            text-align: center;
+            margin-top: 20px;
+            color:#0f526d;
+           
+        }
+        .container{
+           margin-top: 60px;
+           margin-left: 30%;
+           width: 400px;
+            height: 400px;
+background-color: rgba(107, 139, 166, 0.473);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);    
+        }
+        input{
+            width: 300px;
+            height: 40px;
+            margin: 10px;
+            padding: 5px;
+            font-size: 16px;
+            border:none;
+            border-radius: 5px;
+        }
+       
+        button{
+            width: 150px;
+            height: 40px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            color:blanchedalmond;
+            background-color: #0f526d;
+            border:none;
+            border-radius: 5px;
+        }
+       .icon-button{
+         background-color: #0f526d; ;
+          cursor: pointer;
+            color:blanchedalmond;
+            padding: 12px 16px; 
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+              width: 50px;
+            height: 50px;
+       }
+       .icon-button:hover{
+         background-color: #062836;
+       }
+        #resultTable{
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        #resultTable th, #resultTable td{
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        #resultTable th{
+            background-color: #0f526d;
+            color: blanchedalmond;
+        }
+
+     
+      
