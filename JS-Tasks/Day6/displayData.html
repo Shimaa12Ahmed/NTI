@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users System</title>
+<link rel="stylesheet" href="style.css">
+   <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+   
+</head>
+<body>
+   
+
+        <h2>Search Users</h2>
+        <div class="search-container">
+<div class="row">
+<select class="form-control" id="search" name="search">
+  <option value="all">All</option>
+    <option value="firstName">First Name</option>
+  <option value="lastName">Last Name</option>
+  <option value="gender">Gender</option>
+  <option value="age">Age</option>
+</select>
+<div class="field">
+<input type="text" id="search-input" class="form-control"/>
+</div>
+
+<div class="checkbox-group">
+    <input type="checkbox" id="graduated">
+    <label for="graduated">Is Graduated</label>
+</div>
+</div>
+    
+</div>
+ <table id="resultTable" >
+        <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>BirthDate</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Is Graduated</th>
+              <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="user">
+            
+        </tbody>
+    </table> 
+    <div id="editModal" class="modal">
+    <div class="modal-content">
+
+        <span class="close" onclick="closeModal()">✖</span>
+
+        <h3>Update User</h3>
+
+   <div class="row">
+            <div class="field">
+                <label>First Name</label>
+                <input type="text"class="form-control" id="edit-fname">
+            </div>
+
+            <div class="field">
+                <label>Last Name</label>
+                <input type="text" class="form-control"id="edit-lname">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field">
+                <label>Birth Date</label>
+                <input type="date"class="form-control" id="edit-birth">
+            </div>
+
+            <div class="field">
+                <label>Age</label>
+                <input type="number"class="form-control" id="edit-age" disabled>
+            </div>
+        </div>
+
+   <div class="field">
+<label for="gender">Choose gender:</label>
+<select class="form-control" id="edit-gender" name="gender">
+<option value="" selected disabled>Select Gender</option>
+    <option value="Female">Female</option>
+  <option value="Male">Male</option>
+</select>
+</div>
+
+        <div class="radio-group">
+
+            <label>
+                <input
+                    type="radio"
+                    name="edit-grade"
+                    value="Graduate">
+                Graduate
+            </label>
+
+            <label>
+                <input
+                    type="radio"
+                    name="edit-grade"
+                    value="Student">
+                Student
+            </label>
+
+        </div>
+<div  id="btn">
+        <button id="submit-btn" onclick="updateUser()">
+            Update User
+        </button>
+    </div>
+    </div>
+</div>
+
+</body>
+ <script src="script2.js"></script>
