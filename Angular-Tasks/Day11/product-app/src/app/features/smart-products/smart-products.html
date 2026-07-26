@@ -1,0 +1,156 @@
+<div class="card shadow-lg border-0 rounded-4">
+  <div class="card-body">
+
+    <div class="d-flex flex-wrap gap-2 mb-4">
+
+      <button class="btn btn-outline-secondary"
+              type="button"
+              (click)="setStatus('loading')">
+        Loading
+      </button>
+
+      <button class="btn btn-outline-success"
+              type="button"
+              (click)="setStatus('success')">
+        Success
+      </button>
+
+      <button class="btn btn-outline-danger"
+              type="button"
+              (click)="setStatus('error')">
+        Error
+      </button>
+
+      <button class="btn btn-outline-dark"
+              type="button"
+              (click)="setStatus('idle')">
+        Default (Idle)
+      </button>
+
+    </div>
+
+    @switch (status) {
+
+      @case ('loading') {
+        <div class="alert alert-secondary mb-0">
+          <strong>Loading...</strong>
+          Please wait while we fetch data.
+        </div>
+      }
+
+      @case ('success') {
+        <div class="alert alert-success mb-0">
+          <strong>Success!</strong>
+          Data loaded correctly.
+        </div>
+      }
+
+      @case ('error') {
+        <div class="alert alert-danger mb-0">
+          <strong>Error!</strong>
+          Something went wrong. Try again.
+        </div>
+      }
+
+      @default {
+        <div class="alert alert-light border mb-0">
+          <strong>Idle.</strong>
+          Click a status button to change the view.
+        </div>
+      }
+
+    }
+
+  </div>
+
+
+  <div class="card shadow-lg border-0 rounded-4">
+    <div class="card-body p-4">
+      <form class="d-flex justify-content-center" role="search">
+        <input
+          class="form-control form-control-lg w-50"
+          type="search"
+          placeholder="Search Product..."
+           [(ngModel)]="searchText"
+           name="search"
+        >
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+<h3 class="text-primary text-center fw-bold mt-5 mb-4">
+  Products
+</h3>
+
+<div class="container">
+  <table class="table table-hover table-striped align-middle shadow-sm rounded overflow-hidden">
+    <thead class="table-primary text-center">
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+
+    <tbody class="text-center">
+      @for (product of filteredProducts; track product.id; let i = $index) {
+        <tr>
+          <td>{{ i + 1 }}</td>
+
+          <td class="fw-semibold">
+            {{ product.name }}
+          </td>
+
+          <td class=" fw-bold" [style.color]="product.price > 1000 ? 'green' : 'red'">
+
+  {{product.price}}EGP
+
+</td>
+          
+
+          <td>
+            {{ product.category }}
+          </td>
+
+          <td>
+            @if (product.inStock) {
+              <span class="badge text-bg-success px-3 py-2">
+                In Stock
+              </span>
+            } @else {
+              <span class="badge text-bg-danger px-3 py-2">
+                Out Of Stock
+              </span>
+            }
+          </td>
+        </tr>
+      }
+    @empty {
+  <tr>
+    <td colspan="5" class="text-center align-middle py-5">
+     
+        <h5 class="fw-bold mb-2">No Products Available</h5>
+     
+    </td>
+  </tr>
+}
+      <div class="d-flex justify-content-around m-2">
+       <button class="btn btn-outline-danger"
+              type="button"
+              (click)="clearProducts()">
+        Clear
+      </button>
+       <button class="btn btn-outline-primary"
+              type="button"
+              (click)="resetProducts()">
+        Reset
+      </button>
+    </div>
+    
+    </tbody>
+  </table>
+</div>

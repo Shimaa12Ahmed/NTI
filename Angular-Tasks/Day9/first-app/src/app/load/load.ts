@@ -8,4 +8,13 @@ import { Component,isStandalone } from '@angular/core';
   templateUrl: './load.html',
   styleUrl: './load.css',
 })
-export class LoadComponent {}
+export class LoadComponent {
+  btnCount=0;
+
+  increment(){
+    this.btnCount++;
+  }
+  decrement(){
+    this.btnCount--;
+  }
+}
